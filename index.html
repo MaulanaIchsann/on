@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login dan Daftar</title>
+    <link rel="stylesheet" href="style1.css">
+    <style>
+        .wrapper { max-width: 400px; margin: auto; padding: 20px; border: 1px solid #ccc; }
+        .input-box { margin-bottom: 15px; }
+        .input-box input { width: 100%; padding: 10px; }
+        .btn { width: 100%; padding: 10px; background-color: #007BFF; color: white; border: none; cursor: pointer; }
+        .btn:hover { background-color: #0056b3; }
+        .register-link, .bottom { text-align: center; margin-top: 10px; }
+        .hidden { display: none; }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Login Form -->
+        <form id="login-form" action="login.php" method="POST">
+            <h1>Login</h1>
+            <div class="input-box">
+                <input type="text" name="username" placeholder="Username" required>
+            </div>
+            <div class="input-box">
+                <input type="password" name="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn"><a href="hcww.html">Login</a></button>
+            <div class="register-link">
+                <p>Tidak punya akun? <a href="register.php" onclick="toggleForms('register')">Daftar</a></p>
+            </div>
+        </form>
+
+        <!-- Register Form -->
+        <form id="register-form" class="hidden" action="register.php" method="POST">
+            <h1>Daftar</h1>
+            <div class="input-box">
+                <input type="text" name="nama" placeholder="Fullname" required>
+            </div>
+            <div class="input-box">
+                <input type="text" name="username" placeholder="Username" required>
+            </div>
+            <div class="input-box">
+                <input type="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="input-box">
+                <input type="password" name="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn">Daftar</button>
+            <div class="bottom">
+                <p>Sudah memiliki akun? <a href="login.php" onclick="toggleForms('login')">Masuk</a></p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function toggleForms(form) {
+            if (form === 'login') {
+                document.getElementById('login-form').classList.remove('hidden');
+                document.getElementById('register-form').classList.add('hidden');
+            } else {
+                document.getElementById('login-form').classList.add('hidden');
+                document.getElementById('register-form').classList.remove('hidden');
+            }
+        }
+    </script>
+</body>
+</html>

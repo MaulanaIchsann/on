@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardcore World Wide</title>
+    <link rel="stylesheet" href="style3.css">
+    <!-- box icon -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+
+    <!-- navbar -->
+    <header>
+        <a href="#" class="logo">
+            <img src="image/hc.png" alt="">
+        </a>
+        <!-- menu icon -->
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <!-- links --> 
+        <ul class="navbar">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About us</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#review">Review</a></li>
+            <li><a href="#footer">Contact</a></li>
+        </ul>
+        <!-- icon -->
+        <div class="header-icon">
+            <i class='bx bx-cart-alt' id="cart-icon"></i>
+            <i class='bx bx-search' id="search-icon"></i>
+            <i class='bx bx-log-out' id="logout-icon"></i>
+        </div>
+
+        <!-- cart sidebar -->
+        <aside id="cart-sidebar">
+            <h2>Checkout</h2>
+            <ul id="cart-items"></ul>
+            <p>Total: <span id="cart-total">0</span></p>
+            <button id="checkout">Checkout</button>
+            <div id="checkout-form" style="display: none;">
+                <form id="confirm-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name"><br><br>
+
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address"><br><br>
+                    
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone"><br><br>
+                    <button type="button" id="confirm">Confirm</button>
+                </form>
+            </div>
+        </aside>
+
+        <!-- search box -->
+        <div class="search-box">
+            <input type="search" name="" id="search-input" placeholder="Search">
+        </div>
+    </header>
+
+    <!-- home -->
+    <section class="home" id="home">
+        <div class="home-text">
+            <h1>Hardcore World Wide</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus saepe aut molestias velit porro a repellendus sunt! Tenetur recusandae odit fugiat placeat pariatur sequi possimus, delectus, ducimus dignissimos, harum aut!</p>
+            <a href="#products" class="btn">Shop Now</a>
+        </div>
+
+        <div class="home-img">
+            <img src="image/hc.png" alt="">
+        </div>
+    </section>
+
+    <!-- about -->
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="image/hc.png" alt=""> <!--nanti diganti-->
+        </div>
+
+        <div class="about-text">
+            <h2>History</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit illo fugit eum voluptatibus cupiditate recusandae, excepturi iure dicta, accusantium aliquam explicabo amet ex quis, quidem atque ipsum perferendis et neque?</p>
+            <a href="#footer" class="btn">Learn more</a>
+        </div>
+    </section>
+
+    <!-- products -->
+    <section class="products" id="products">
+        <div class="heading">
+            <h2>Our Collection</h2>
+        </div>
+
+    <!-- container -->
+        <div class="products-container">
+            <div class="box">
+                <img src="image/mg1.jpg" alt="">
+                    <h3>Modern Guns-Everything Falls Apart</h3>
+                        <div class="content">
+                            <span>Idr 190k</span>
+                            <a href="#">Buy Now</a>
+                        </div>
+            </div>
+
+            <div class="box">
+                <img src="image/mg2.jpg" alt="">
+                    <h3>Modern Guns-We Are Strangers</h3>
+                    <div class="content">
+                        <span>Idr 210k</span>
+                        <a href="#">Buy Now</a>
+                    </div>
+            </div>
+
+            <div class="box">
+                <img src="image/ct1.webp" alt="">
+                <h3>Counterparts-A Eulogy</h3>
+                    <div class="content">
+                        <span>Idr 599k</span>
+                        <a href="#">Buy Now</a>
+                    </div>
+            </div>
+
+            <div class="box">
+                <img src="image/ct2.webp" alt="">
+                <h3>Counterparts</h3>
+                    <div class="content">
+                        <span>Idr 423k</span>
+                        <a href="#">Buy Now</a>
+                    </div>
+            </div>
+
+            <div class="box">
+                <img src="image/kn1.webp" alt="">
+                <h3>Knocked Loose-Upon Loss 1</h3>
+                    <div class="content">
+                        <span>Idr 210k</span>
+                        <a href="#">Buy Now</a>
+                    </div>
+            </div>
+
+            <div class="box">
+                <img src="image/kn2.webp" alt="">
+                <h3>Knocked Loose-Upon Loss 2</h3>
+                    <div class="content">
+                        <span>Idr 532k</span>
+                        <a href="#">Buy Now</a>
+                    </div>
+            </div>
+
+            <div class="box">
+                <img src="image/knm1.png" alt="">
+                <h3>Knocked Loose-Blinding Faith</h3>
+                    <div class="content">
+                        <span>Idr 125k</span>
+                        <a href="#">Buy Now</a>
+                    </div>
+            </div>
+
+            <div class="box">
+                <img src="image/knm2.png" alt="">
+                <h3>Knocked Loose-A Tear of Fabric Life</h3>
+                    <div class="content">
+                        <span>Idr 125k</span>
+                        <a href="#">Buy Now</a>
+                    </div>
+            </div>
+
+            <div class="box">
+                <img src="image/ctm1.webp" alt="">
+                <h3>Counterparts</h3>
+                    <div class="content">
+                        <span>Idr 232k</span>
+                        <a href="#">Buy Now</a>
+                    </div>
+            </div>
+
+            <div class="box">
+                <img src="image/lsm1.png" alt="">
+                <h3>Lorna Shore-</h3>
+                    <div class="content">
+                        <span>Idr 230k</span>
+                        <a href="#">Buy Now</a>
+                    </div>
+            </div>
+
+            <div class="box">
+                <img src="image/lsm2.png" alt="">
+                <h3>Lorna Shore-Pain Remain</h3>
+                    <div class="content">
+                        <span>Idr 145k</span>
+                        <a href="#">Buy Now</a>
+                    </div>
+            </div>
+        </div>
+    </section>
+    <!-- end products -->
+
+    <!-- review -->
+    <section class="review" id="review">
+        <div class="heading">
+            <h2>Review</h2>
+        </div>
+
+    <!-- container -->
+        <div class="review-container">
+            <div class="box">
+                <img src="image/ct2.webp" alt="">
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis esse voluptatem, nulla porro corrupti fugiat quos molestias rem exercitationem facilis quibusdam. Magni voluptatum natus consectetur eligendi incidunt, quis ipsum ad.</p>
+                <h2>connie</h2>
+            </div>
+
+            <div class="box">
+                <img src="image/knm2.png" alt="">
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis esse voluptatem, nulla porro corrupti fugiat quos molestias rem exercitationem facilis quibusdam. Magni voluptatum natus consectetur eligendi incidunt, quis ipsum ad.</p>
+                <h2>tom</h2>
+            </div>
+
+            <div class="box">
+                <img src="image/kn2.webp" alt="">
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis esse voluptatem, nulla porro corrupti fugiat quos molestias rem exercitationem facilis quibusdam. Magni voluptatum natus consectetur eligendi incidunt, quis ipsum ad.</p>
+                <h2>will</h2>
+            </div>
+
+            <div class="box">
+                <img src="image/lsm1.png" alt="">
+                <div class="stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis esse voluptatem, nulla porro corrupti fugiat quos molestias rem exercitationem facilis quibusdam. Magni voluptatum natus consectetur eligendi incidunt, quis ipsum ad.</p>
+                <h2>ollie</h2>
+            </div>
+        </div>
+    </section>
+    <!-- end review -->
+
+    <!-- footer -->
+    <section>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31717.060141732458!2d106.69632740672407!3d-6.4412134404875045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69e7ed3f257b6f%3A0x401576d14fed400!2sParung%2C%20Kec.%20Parung%2C%20Kabupaten%20Bogor%2C%20Jawa%20Barat!5e0!3m2!1sid!2sid!4v1717706331724!5m2!1sid!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <section class="footer" id="footer">
+            <div class="footer-box">
+                <h3>Hardcore World Wide</h3>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+                <div class="social">
+                    <a href="https://web.facebook.com/HCWORLDWIDE/?_rdc=1&_rdr"><i class="bx bxl-facebook"></i></a>
+                    <a href="https://www.instagram.com/hcworldwide/?hl=id"><i class="bx bxl-instagram"></i></a>
+                    <a href="https://x.com/worldwidehc?mx=2"><i class="bx bxl-twitter"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-box">
+                <h3>Contact</h3>
+                <div class="contact">
+                    <span><i class='bx bxs-map'></i>121 Bogor, West Java 16330</span>
+                    <span><i class='bx bxs-phone'></i>+62 8999 66123</span>
+                    <span><i class='bx bxs-envelope'></i>hcww@shop.com</span>
+
+                </div>
+            </div>
+        </section>
+    </section>
+
+   
+<!-- copyright -->
+<div class="copyright">
+    <p>&#169; Hardcore World Wide</p>
+</div>
+
+<!-- link js -->
+<script src="main.js">
+        
+</script>
+ 
+</body>
+</html>

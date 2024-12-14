@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('image/bghc.webp') no-repeat; /* Ganti dengan path ke gambar background Anda */
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    width: 850px;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    color: white;
+    border-radius: 10px;
+    padding: 50px 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.customer-details {
+    width: 45%;
+    margin-bottom: 20px;
+    border: 2px solid #333; /* Tambahkan border pada customer-details */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.payment-method {
+    width: 45%;
+    margin-left: 20px;
+    border: 2px solid #333; /* Tambahkan border pada payment-method */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.payment-method label {
+    margin-bottom: 10px;
+}
+
+.payment-method input[type="radio"] {
+    margin-right: 10px;
+}
+
+#bank-options, #e-wallet-options {
+    border: 1px solid #ccc; /* Tambahkan border pada bank-options dan e-wallet-options */
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+}
+
+button[type="submit"]:hover {
+    background-color: #3e8e41;
+}
+
+.confirm-button {
+    text-align: right;
+    margin-top: 20px;
+}

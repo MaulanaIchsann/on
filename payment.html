@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style4.css">
+    <title>Payment Method</title>
+</head>
+<body>
+
+<div class="container">
+    <div class="customer-details">
+        <h3>Customer Details</h3>
+        <p>Name: <span id="customer-name"></span></p>
+        <p>Address: <span id="customer-address"></span></p>
+        <p>Phone: <span id="customer-phone"></span></p>
+        <p>Order Total: <span id="order-total"></span></p>
+        <h3>Order Items</h3>
+        <ul id="order-items"></ul>
+    </div>
+
+    <div class="payment-method">
+        <h2>Payment Method</h2>
+        <form id="payment-form">
+            <label>
+                <input type="radio" name="payment-method" value="bank-transfer" required>
+                Bank Transfer
+            </label><br>
+
+            <div id="bank-options" style="display: none;">
+                <h3>Select Bank</h3>
+                <label>
+                    <input type="radio" name="bank" value="bank-a">
+                    Bank A
+                </label><br>
+                <label>
+                    <input type="radio" name="bank" value="bank-b">
+                    Bank B
+                </label><br>
+                <label>
+                    <input type="radio" name="bank" value="bank-c">
+                    Bank C
+                </label><br><br>
+            </div>
+
+            <label>
+                <input type="radio" name="payment-method" value="e-wallet" required>
+                E-Wallet
+            </label><br>
+
+            <div id="e-wallet-options" style="display: none;">
+                <h3>Select E-Wallet</h3>
+                <label>
+                    <input type="radio" name="e-wallet" value="ovo">
+                    OVO
+                </label><br>
+                <label>
+                    <input type="radio" name="e-wallet" value="dana">
+                    DANA
+                </label><br>
+                <label>
+                    <input type="radio" name="e-wallet" value="gopay">
+                    GoPay
+                </label><br><br>
+            </div>
+
+            <button type="submit">Proceed to Payment</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    // JavaScript to handle showing and hiding of payment options
+    document.querySelectorAll('input[name="payment-method"]').forEach((elem) => {
+        elem.addEventListener("change", function(event) {
+            var value = event.target.value;
+            document.getElementById("bank-options").style.display = (value === "bank-transfer") ? "block" : "none";
+            document.getElementById("e-wallet-options").style.display = (value === "e-wallet") ? "block" : "none";
+
+            // Remove required attribute from non-relevant options
+            if (value === "bank-transfer") {
+                document.querySelectorAll('input[name="bank"]').forEach(bankElem => {
+                    bankElem.required = true;
+                });
+                document.querySelectorAll('input[name="e-wallet"]').forEach(walletElem => {
+                    walletElem.required = false;
+                });
+            } else {
+                document.querySelectorAll('input[name="bank"]').forEach(bankElem => {
+                    bankElem.required = false;
+                });
+                document.querySelectorAll('input[name="e-wallet"]').forEach(walletElem => {
+                    walletElem.required = true;
+                });
+            }
+        });
+    });
+
+    // JavaScript to handle loading of order data and form submission
+    document.addEventListener('DOMContentLoaded', () => {
+        const orderData = JSON.parse(localStorage.getItem('orderData'));
+        
+        if (!orderData) {
+            alert('No order data found. Please complete the checkout process first.');
+            window.location.href = 'hcww.html';
+            return;
+        }
+      
+        document.getElementById('customer-name').textContent = orderData.name;
+        document.getElementById('customer-address').textContent = orderData.address;
+        document.getElementById('customer-phone').textContent = orderData.phone;
+        document.getElementById('order-total').textContent = orderData.total;
+      
+        const orderItemsList = document.getElementById('order-items');
+        orderData.items.forEach(item => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `${item.product} - Quantity: ${item.quantity}`;
+            orderItemsList.appendChild(listItem);
+        });
+      
+        document.getElementById('payment-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Collect payment method
+            const paymentMethod = document.querySelector('input[name="payment-method"]:checked').value;
+            const paymentData = { method: paymentMethod };
+
+            // Collect bank or e-wallet data based on the selected payment method
+            if (paymentMethod === 'bank-transfer') {
+                const bank = document.querySelector('input[name="bank"]:checked').value;
+                paymentData.bank = bank;
+            } else if (paymentMethod === 'e-wallet') {
+                const eWallet = document.querySelector('input[name="e-wallet"]:checked').value;
+                paymentData.eWallet = eWallet;
+            }
+
+            console.log('Payment Data:', paymentData);
+            alert(`Order confirmed! Payment method: ${paymentMethod}`);
+
+            localStorage.removeItem('orderData');
+            window.location.href = 'hcww.html';
+        });
+    });
+</script>
+
+</body>
+</html>
